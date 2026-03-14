@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   // If deploying to https://<username>.github.io/<repository-name>/
-  // basePath: '/My_Portfolio',
+  basePath: '/Portfolio',
 };
 
 export default nextConfig;
