@@ -99,7 +99,7 @@ export default function Experience() {
   ];
 
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto overflow-visible">
+    <section className="pt-48 pb-24 px-6 max-w-7xl mx-auto overflow-visible">
       <div className="text-center mb-32">
         <motion.h2
           initial={{ opacity: 0 }}

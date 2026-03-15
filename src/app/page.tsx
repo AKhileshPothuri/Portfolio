@@ -24,6 +24,9 @@ export default function Home() {
         {/* The Arsenal: Categorized Expertise */}
         <SkillsArsenal />
 
+        {/* Spacer for visual depth */}
+        <div className="h-64" aria-hidden="true" />
+
         {/* The Odyssey: Cinematic Experience */}
         <Experience />
 
@@ -39,14 +42,12 @@ export default function Home() {
                 <p className="text-white/30 text-sm tracking-widest uppercase">The Neural Architect</p>
               </div>
               <div className="flex gap-8 text-white/40 text-sm uppercase tracking-widest font-medium">
-                <a href="https://www.linkedin.com/in/akhilesh-pothuri/" className="hover:text-brand-cyan transition-colors">LinkedIn</a>
-                <a href="https://github.com/AKhileshPothuri" className="hover:text-brand-cyan transition-colors">GitHub</a>
+                <a href="https://www.linkedin.com/in/akhilesh-pothuri/" className="hover:text-brand-cyan transition-colors text-brand-cyan">LinkedIn</a>
+                <a href="https://github.com/AKhileshPothuri" className="hover:text-brand-cyan transition-colors text-brand-cyan">GitHub</a>
                 <a href={process.env.NODE_ENV === 'production' ? "/Portfolio/resume.pdf" : "/resume.pdf"} target="_blank" className="hover:text-brand-cyan transition-colors text-brand-cyan">Resume</a>
               </div>
             </div>
-            <p className="text-white/20 text-[10px] tracking-[0.5em] uppercase">
-              Designed for the Latent Space &copy; 2024
-            </p>
+
           </div>
         </footer>
       </main>

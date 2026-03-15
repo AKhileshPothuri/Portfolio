@@ -26,7 +26,7 @@ const categories = [
 
 export default function SkillsArsenal() {
   return (
-    <section id="arsenal" className="py-32 px-6 max-w-7xl mx-auto">
+    <section id="arsenal" className="pt-32 pb-48 px-6 max-w-7xl mx-auto">
       <div className="text-center mb-24">
         <motion.h2 
           initial={{ opacity: 0 }}
