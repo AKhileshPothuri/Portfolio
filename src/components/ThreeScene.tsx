@@ -6,7 +6,6 @@ import * as random from "maath/random/dist/maath-random.esm";
 import { useState, useRef, Suspense } from "react";
 import * as THREE from "three";
 import { Bloom, EffectComposer, Noise, Vignette } from "@react-three/postprocessing";
-import SkillsNebula from "./SkillsNebula";
 
 function SynapticBackground({ dim = 1 }: { dim: number }) {
   const ref = useRef<any>(null);
@@ -95,7 +94,6 @@ function SceneContent() {
       
       <group>
         <SynapticBackground dim={dim} />
-        <SkillsNebula dim={dim} />
       </group>
 
       <Float speed={1.5} rotationIntensity={1} floatIntensity={1}>

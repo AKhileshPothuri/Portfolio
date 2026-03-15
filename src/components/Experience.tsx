@@ -65,36 +65,36 @@ function CinematicModule({ title, summary, date, details, icon: Icon, tech, inde
 export default function Experience() {
   const modules = [
     {
-      summary: "Verizon: Scaling Intelligence",
+      summary: "The Agentic Core",
       title: "Verizon | GenAI",
       date: "2024 - Present",
-      details: "Orchestrating enterprise agentic workflows and multi-agent systems. Built the QVerse ecosystem which handles 10k+ daily queries through hierarchical planning and reflection.",
+      details: "Architecting QVerse and Talk2Report—high-scale multi-agent sequences using LangGraph and ReAct. Optimized systems for sub-second latency across complex enterprise BI workflows.",
       icon: Briefcase,
-      tech: ["LangGraph", "Talk2Report", "Model Optimization", "LoRA"]
+      tech: ["LangGraph", "Multi-Agent Systems", "ReAct", "Agentic Workflows"]
     },
     {
-      summary: "UNCC: Forging the Foundation",
-      title: "UNC Charlotte",
-      date: "2022 - 2023",
-      details: "Deep specialization in Neural Networks and Computer Vision. Master's in Data Science focusing on high-scale architectural design for machine learning.",
-      icon: GraduationCap,
-      tech: ["Deep Learning", "Computer Vision", "Advanced Analytics"]
+      summary: "Intelligence Optimization",
+      title: "Verizon | ML",
+      date: "2024 - Present",
+      details: "Leading supervised fine-tuning for Gemma and Llama models on H100 clusters using LoRA/GRPO. Developed ThinkForge, achieving 60% cache efficiency for distributed LLM inference.",
+      icon: Cpu,
+      tech: ["LoRA/GRPO", "H100 Clusters", "Model Optimization", "ThinkForge"]
     },
     {
-      summary: "Logistics Architecture",
+      summary: "Commercial Impact",
       title: "HP R&D",
       date: "2020 - 2022",
-      details: "Data Scientist building recommendation engines and global logistics pipelines. Focused on spare-part replacement and automated architectural efficiency.",
-      icon: Cpu,
-      tech: ["Recommendation Engines", "Data Pipelines", "Anomaly Detection"]
+      details: "Transformed global logistics through Spark-based ETL and demand forecasting models. Delivered an anticipated $26M ROI by streamlining spare-part replacement pipelines.",
+      icon: Database,
+      tech: ["PySpark", "ETL Pipelines", "Forecasting", "ROI Analytics"]
     },
     {
-      summary: "Core Systems",
-      title: "Shiv Nadar University",
-      date: "2016 - 2020",
-      details: "B.Tech in Computer Science and Engineering. Foundational research in distributed systems and publication in Knowledge Graphs.",
-      icon: Network,
-      tech: ["Distributed Systems", "Knowledge Graphs", "C++", "Mathematics"]
+      summary: "Foundation & Research",
+      title: "UNCC / SNU",
+      date: "2016 - 2023",
+      details: "Master’s in Data Science from UNC Charlotte with honors. Foundational research in distributed systems and Knowledge Graph publications during B.Tech.",
+      icon: GraduationCap,
+      tech: ["Neural Networks", "Knowledge Graphs", "Distributed Systems"]
     }
   ];
 
@@ -108,11 +108,11 @@ export default function Experience() {
         >
           THE ODYSSEY
         </motion.h2>
-        <p className="text-white/30 tracking-[0.5em] uppercase text-sm">Chronicles of the Neural Architect</p>
+        <p className="text-white/30 tracking-[0.5em] uppercase text-sm">Professional Journey & Narrative Pillars</p>
       </div>
 
       {modules.map((m, i) => (
-        <CinematicModule key={m.title} {...m} index={i} />
+        <CinematicModule key={i} {...m} index={i} />
       ))}
     </section>
   );

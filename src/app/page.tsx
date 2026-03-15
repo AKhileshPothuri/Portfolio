@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
 import Experience from "@/components/Experience";
+import SkillsArsenal from "@/components/SkillsArsenal";
 import ProjectVault from "@/components/ProjectVault";
 import ContentSection from "@/components/ContentSection";
 
@@ -17,39 +18,16 @@ export default function Home() {
       <ThreeScene />
 
       <main className="relative overflow-visible">
-        {/* Landing & QVerse Hero Moment */}
+        {/* Identity & Bio */}
         <Hero />
 
-        {/* Synaptic Tuner Module */}
-        <ContentSection
-          cinematicSummary="Optimization Protocols"
-          title="Synaptic Tuner"
-          id="tuner"
-        >
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 aspect-video glass-dark rounded-[2rem] flex items-center justify-center border border-white/5 overflow-hidden">
-              <div className="w-full h-full bg-gradient-to-tr from-brand-violet/20 to-transparent" />
-            </div>
-            <div className="order-1 md:order-2">
-              <p className="text-xl md:text-2xl text-white/80 leading-relaxed mb-6 font-light">
-                Rewriting the weights of intelligence. Led reward-based
-                fine-tuning of <span className="text-brand-violet font-medium">Gemma and Llama</span> models on
-                distributed NVIDIA H100 clusters.
-              </p>
-              <div className="flex flex-wrap gap-4 mt-8">
-                <div className="skill-tag">LoRA</div>
-                <div className="skill-tag">GRPO</div>
-                <div className="skill-tag">PyTorch</div>
-                <div className="skill-tag">H100 Clusters</div>
-              </div>
-            </div>
-          </div>
-        </ContentSection>
+        {/* The Arsenal: Categorized Expertise */}
+        <SkillsArsenal />
 
         {/* The Odyssey: Cinematic Experience */}
         <Experience />
 
-        {/* The Vault: Project Showcase */}
+        {/* The Vault: High-Impact Showcases */}
         <ProjectVault />
 
         {/* Footer */}
@@ -63,7 +41,7 @@ export default function Home() {
               <div className="flex gap-8 text-white/40 text-sm uppercase tracking-widest font-medium">
                 <a href="https://www.linkedin.com/in/akhilesh-pothuri/" className="hover:text-brand-cyan transition-colors">LinkedIn</a>
                 <a href="https://github.com/AKhileshPothuri" className="hover:text-brand-cyan transition-colors">GitHub</a>
-                <a href="./resume.pdf" target="_blank" className="hover:text-brand-cyan transition-colors text-brand-cyan">Resume</a>
+                <a href={process.env.NODE_ENV === 'production' ? "/Portfolio/resume.pdf" : "/resume.pdf"} target="_blank" className="hover:text-brand-cyan transition-colors text-brand-cyan">Resume</a>
               </div>
             </div>
             <p className="text-white/20 text-[10px] tracking-[0.5em] uppercase">
