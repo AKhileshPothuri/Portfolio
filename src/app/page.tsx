@@ -63,7 +63,7 @@ export default function Home() {
               <div className="flex gap-8 text-white/40 text-sm uppercase tracking-widest font-medium">
                 <a href="https://www.linkedin.com/in/akhilesh-pothuri/" className="hover:text-brand-cyan transition-colors">LinkedIn</a>
                 <a href="https://github.com/AKhileshPothuri" className="hover:text-brand-cyan transition-colors">GitHub</a>
-                <a href="/resume.pdf" target="_blank" className="hover:text-brand-cyan transition-colors text-brand-cyan">Resume</a>
+                <a href="./resume.pdf" target="_blank" className="hover:text-brand-cyan transition-colors text-brand-cyan">Resume</a>
               </div>
             </div>
             <p className="text-white/20 text-[10px] tracking-[0.5em] uppercase">
