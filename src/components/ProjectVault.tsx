@@ -1,14 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Code, Layers, ShieldCheck, Zap } from "lucide-react";
+import { Code, Layers, ShieldCheck, Zap } from "lucide-react";
 
 interface Project {
   title: string;
   category: string;
   description: string;
   tech: string[];
-  links?: { github?: string; demo?: string };
   gridSpan?: string;
   accent: string;
 }
@@ -58,10 +57,6 @@ function ProjectCard({ project }: { project: Project }) {
           <div className="p-4 bg-brand-cyan/10 rounded-2xl border border-brand-cyan/20">
             <Code className="text-brand-cyan" size={28} />
           </div>
-          <div className="flex gap-6">
-             <Github className="text-white/40 hover:text-white transition-colors cursor-pointer" size={24} />
-             <ExternalLink className="text-white/40 hover:text-white transition-colors cursor-pointer" size={24} />
-          </div>
         </div>
         
         <span className="text-[12px] uppercase tracking-[0.4em] text-brand-cyan font-bold mb-4 drop-shadow-md">
@@ -109,10 +104,6 @@ function ProjectCard({ project }: { project: Project }) {
         <div className="flex justify-between items-start mb-8">
           <div className="p-4 bg-brand-violet/10 rounded-2xl border border-brand-violet/20">
             <Zap className="text-brand-violet" size={28} />
-          </div>
-          <div className="flex gap-6">
-             <Github className="text-white/40 hover:text-white transition-colors cursor-pointer" size={24} />
-             <ExternalLink className="text-white/40 hover:text-white transition-colors cursor-pointer" size={24} />
           </div>
         </div>
         
