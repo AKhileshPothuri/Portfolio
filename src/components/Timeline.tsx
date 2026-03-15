@@ -68,7 +68,7 @@ const timelineData: TimelineEvent[] = [
     subtitle: "Bachelor of Technology",
     date: "2016 - 2020",
     icon: GraduationCap,
-    description: "B.Tech in Computer Science and Engineering. Solid foundation in distributed systems and mathematics.",
+    description: "B.Tech in Computer Science and Engineering. Solid foundation in distributed systems and Mathematics.",
     education: "B.Tech in CSE"
   }
 ];
