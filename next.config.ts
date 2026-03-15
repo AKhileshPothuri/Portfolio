@@ -1,12 +1,14 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig: NextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
   },
-  // If deploying to https://<username>.github.io/<repository-name>/
-  basePath: '/Portfolio',
+  basePath: isProd ? '/Portfolio' : '',
+  assetPrefix: isProd ? '/Portfolio/' : '',
 };
 
 export default nextConfig;

@@ -90,18 +90,26 @@ body {
 
 /* Typography Reveals */
 .reveal-text {
-  background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0.5));
-  background-size: 200% auto;
+  background: linear-gradient(
+    90deg, 
+    #ffffff 0%, 
+    var(--color-brand-cyan) 50%, 
+    #ffffff 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine 5s linear infinite;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Hierarchy boost */
+  text-shadow: 0 0 10px rgba(0, 242, 255, 0.15);
+  padding: 0.05em 0.1em; /* Prevent clipping on start/end chars */
+  margin-left: -0.1em; /* Offset the padding for alignment */
 }
 
-h1, h2, h3 {
-  color: #ffffff;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Separation from background */
+.glass-cinematic {
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes shine {
@@ -112,11 +120,19 @@ h1, h2, h3 {
 
 /* High Contrast Skill Tags */
 .skill-tag {
-  background: #312E81; /* Deep Indigo */
+  background: rgba(49, 46, 129, 0.8);
   color: #FFFFFF;
   padding: 0.4rem 0.8rem;
   border-radius: 9999px;
   font-size: 0.8rem;
   font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 242, 255, 0.3);
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: var(--color-brand-cyan);
+  color: #000;
+  box-shadow: 0 0 15px var(--color-brand-cyan);
 }

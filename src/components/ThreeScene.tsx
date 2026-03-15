@@ -8,16 +8,20 @@ import * as THREE from "three";
 import { Bloom, EffectComposer, Noise, Vignette } from "@react-three/postprocessing";
 import SkillsNebula from "./SkillsNebula";
 
-function Particles({ dim = 1, ...props }: any) {
+function SynapticBackground({ dim = 1 }: { dim: number }) {
   const ref = useRef<any>(null);
-  const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(6000), { radius: 1.5 }) as Float32Array
+  const [points] = useState(() =>
+    random.inSphere(new Float32Array(30000), { radius: 1.5 }) as Float32Array
   );
 
   useFrame((state, delta) => {
     if (ref.current) {
-      ref.current.rotation.x -= delta / 10;
-      ref.current.rotation.y -= delta / 15;
+      ref.current.rotation.x -= delta / 20;
+      ref.current.rotation.y -= delta / 30;
+      
+      // Reactive to scroll speed
+      const scrollSpeed = Math.abs(state.mouse.x + state.mouse.y) * 0.1;
+      ref.current.rotation.z += scrollSpeed;
     }
   });
 
@@ -25,18 +29,18 @@ function Particles({ dim = 1, ...props }: any) {
     <group rotation={[0, 0, Math.PI / 4]}>
       <Points
         ref={ref}
-        positions={sphere}
+        positions={points}
         stride={3}
         frustumCulled={false}
-        {...props}
       >
         <PointMaterial
           transparent
           color="#00f2ff"
-          size={0.005}
+          size={0.003}
           sizeAttenuation={true}
           depthWrite={false}
-          opacity={0.4 * dim}
+          opacity={0.15 * dim}
+          blending={THREE.AdditiveBlending}
         />
       </Points>
     </group>
@@ -44,59 +48,77 @@ function Particles({ dim = 1, ...props }: any) {
 }
 
 function SceneContent() {
-  const { camera } = useThree();
+  const { camera, mouse, viewport } = useThree();
   const scroll = useScroll();
   const [dim, setDim] = useState(1);
+  const flashlightRef = useRef<THREE.PointLight>(null);
 
   useFrame((state) => {
-    // Scroll-based camera pathing
-    const s = scroll.offset; // 0 to 1
+    const s = scroll.offset;
     
-    // Dimming logic: Dim when scroll is in the middle of sections
-    // Content sections are roughly at 0.2, 0.4, 0.6, 0.8
-    const dimFactor = 1 - (Math.abs(Math.sin(s * Math.PI * 5)) * 0.5);
-    setDim(dimFactor);
+    // Dimming logic removed to prevent flashing
+    const dimFactor = 1;
+    
+    // Flashlight logic (Mouse follow)
+    if (flashlightRef.current) {
+      flashlightRef.current.position.set(
+        (mouse.x * viewport.width) / 2,
+        (mouse.y * viewport.height) / 2,
+        2
+      );
+    }
 
-    camera.position.x = THREE.MathUtils.lerp(camera.position.x, state.mouse.x * 0.5 + Math.sin(s * Math.PI) * 2, 0.05);
-    camera.position.y = THREE.MathUtils.lerp(camera.position.y, state.mouse.y * 0.5 - s * 10, 0.05);
-    camera.position.z = THREE.MathUtils.lerp(camera.position.z, 5 - s * 2, 0.05);
+    // Z-Axis Scrollytelling: Camera zooms through the world
+    // We path the camera along Z and rotate slightly
+    camera.position.z = THREE.MathUtils.lerp(camera.position.z, 6 - s * 15, 0.05);
+    camera.position.x = THREE.MathUtils.lerp(camera.position.x, mouse.x * 0.2 + Math.sin(s * Math.PI * 2) * 0.5, 0.05);
+    camera.position.y = THREE.MathUtils.lerp(camera.position.y, mouse.y * 0.2, 0.05);
     
-    camera.lookAt(0, -s * 5, 0);
+    camera.lookAt(0, 0, -10);
   });
 
   return (
     <>
-      <color attach="background" args={["#050505"]} />
-      <ambientLight intensity={0.2 * dim} />
+      <color attach="background" args={["#020202"]} />
+      <ambientLight intensity={0.1 * dim} />
+      
+      {/* Flashlight Effect */}
+      <pointLight 
+        ref={flashlightRef} 
+        intensity={20} 
+        distance={5} 
+        color="#00f2ff" 
+        decay={2}
+      />
+      
       <pointLight position={[10, 10, 10]} intensity={2 * dim} color="#8b5cf6" />
-      <pointLight position={[-10, -10, -10]} intensity={1.5 * dim} color="#00f2ff" />
       
       <group>
-        <Particles dim={dim} />
+        <SynapticBackground dim={dim} />
         <SkillsNebula dim={dim} />
       </group>
 
       <Float speed={1.5} rotationIntensity={1} floatIntensity={1}>
-        <mesh position={[0, -2, -8]}>
-          <icosahedronGeometry args={[4, 20]} />
+        <mesh position={[0, 0, -10]}>
+          <icosahedronGeometry args={[8, 40]} />
           <meshStandardMaterial
             color="#ffffff"
             wireframe
             transparent
-            opacity={0.03 * dim}
+            opacity={0.02 * dim}
           />
         </mesh>
       </Float>
 
       <EffectComposer multisampling={4}>
         <Bloom 
-          luminanceThreshold={0.1} 
+          luminanceThreshold={0.2} 
           mipmapBlur 
-          intensity={1.2} 
-          radius={0.3} 
+          intensity={1.5} 
+          radius={0.4} 
         />
-        <Noise opacity={0.03} />
-        <Vignette eskil={false} offset={0.1} darkness={1.1} />
+        <Noise opacity={0.05} />
+        <Vignette eskil={false} offset={0.1} darkness={1.2} />
       </EffectComposer>
     </>
   );

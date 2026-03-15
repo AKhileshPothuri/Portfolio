@@ -42,15 +42,14 @@ const projects: Project[] = [
 function ProjectCard({ project }: { project: Project }) {
   return ( project.accent === "brand-cyan" ? (
     <motion.div
-      whileHover={{ y: -5 }}
-      className={`relative rounded-[2.5rem] glass group h-full flex flex-col shadow-[0_0_40px_rgba(0,0,0,0.4)] border border-white/10 ${project.gridSpan || ""}`}
+      whileHover={{ y: -5, scale: 1.02 }}
+      className={`relative rounded-[3rem] glass-cinematic group h-full flex flex-col border border-white/10 ${project.gridSpan || ""}`}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2.5rem]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[3rem]" />
       
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none rounded-[2.5rem]">
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none rounded-[3rem]">
          <div className="w-full h-full p-8 flex items-center justify-center">
             <div className="w-full h-full border-2 border-dashed border-brand-cyan rounded-full animate-[spin_20s_linear_infinite]" />
-            <div className="absolute w-2/3 h-2/3 border-2 border-dashed border-brand-cyan rounded-full animate-[spin_15s_linear_reverse_infinite]" />
          </div>
       </div>
 
@@ -86,21 +85,21 @@ function ProjectCard({ project }: { project: Project }) {
     </motion.div>
   ) : (
     <motion.div
-      whileHover={{ y: -5 }}
-      className={`relative rounded-[2.5rem] glass group h-full flex flex-col shadow-[0_0_40px_rgba(0,0,0,0.4)] border border-white/10 ${project.gridSpan || ""}`}
+      whileHover={{ y: -5, scale: 1.02 }}
+      className={`relative rounded-[3rem] glass-cinematic group h-full flex flex-col border border-white/10 ${project.gridSpan || ""}`}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-violet/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2.5rem]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-violet/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[3rem]" />
       
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none rounded-[2.5rem] overflow-hidden">
-         {[...Array(5)].map((_, i) => (
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none rounded-[3rem] overflow-hidden">
+         {[...Array(3)].map((_, i) => (
            <div 
              key={i} 
              className="absolute h-1 bg-brand-violet/40 rounded-full animate-[pan_3s_linear_infinite]"
              style={{
-               top: `${i * 25}%`,
-               width: `${20 + i * 15}%`,
-               left: '-10%',
-               animationDelay: `${i * 0.5}s`
+                top: `${30 + i * 20}%`,
+                width: '100%',
+                left: '-100%',
+                animationDelay: `${i * 0.5}s`
              }}
            />
          ))}
