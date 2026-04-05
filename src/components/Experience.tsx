@@ -65,34 +65,34 @@ function CinematicModule({ title, summary, date, details, icon: Icon, tech, inde
 export default function Experience() {
   const modules = [
     {
-      summary: "The Agentic Core",
-      title: "Verizon | GenAI",
+      summary: "GenAI Architect",
+      title: "Verizon",
       date: "2024 - Present",
-      details: "Architecting QVerse and Talk2Report—high-scale multi-agent sequences using LangGraph and ReAct. Optimized systems for sub-second latency across complex enterprise BI workflows.",
+      details: "Architected QVerse and Talk2Report multi-agent sequences using LangGraph and ReAct, achieving 40% improvement in system latency across complex enterprise BI workflows.",
       icon: Briefcase,
       tech: ["LangGraph", "Multi-Agent Systems", "ReAct", "Agentic Workflows"]
     },
     {
-      summary: "Intelligence Optimization",
-      title: "Verizon | ML",
+      summary: "MLE - Model Optimization",
+      title: "Verizon",
       date: "2024 - Present",
-      details: "Leading supervised fine-tuning for Gemma and Llama models on H100 clusters using LoRA/GRPO. Developed ThinkForge, achieving 60% cache efficiency for distributed LLM inference.",
+      details: "Led supervised fine-tuning for Gemma and Llama models on H100 clusters using LoRA/GRPO, and developed ThinkForge to reduce inference latency and achieve 60% cache efficiency.",
       icon: Cpu,
       tech: ["LoRA/GRPO", "H100 Clusters", "Model Optimization", "ThinkForge"]
     },
     {
-      summary: "Commercial Impact",
+      summary: "Data Engineer",
       title: "HP R&D",
       date: "2020 - 2022",
-      details: "Transformed global logistics through Spark-based ETL and demand forecasting models. Delivered an anticipated $26M ROI by streamlining spare-part replacement pipelines.",
+      details: "Developed Spark-based ETL and demand forecasting models for global logistics, resulting in an anticipated $26M ROI by streamlining spare-part replacement pipelines.",
       icon: Database,
       tech: ["PySpark", "ETL Pipelines", "Forecasting", "ROI Analytics"]
     },
     {
-      summary: "Foundation & Research",
+      summary: "Researcher",
       title: "UNCC / SNU",
       date: "2016 - 2023",
-      details: "Master’s in Data Science from UNC Charlotte with honors. Foundational research in distributed systems and Knowledge Graph publications during B.Tech.",
+      details: "Completed MS in Data Science with honors, and published research on Knowledge Graphs for distributed systems during B.Tech.",
       icon: GraduationCap,
       tech: ["Neural Networks", "Knowledge Graphs", "Distributed Systems"]
     }
@@ -106,9 +106,9 @@ export default function Experience() {
           whileInView={{ opacity: 1 }}
           className="text-6xl md:text-8xl font-bold font-outfit mb-6"
         >
-          THE ODYSSEY
+          Experience
         </motion.h2>
-        <p className="text-white/30 tracking-[0.5em] uppercase text-sm">Professional Journey & Narrative Pillars</p>
+        <p className="text-white/30 tracking-[0.2em] uppercase text-sm">Professional Journey & Impact</p>
       </div>
 
       {modules.map((m, i) => (

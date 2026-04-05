@@ -33,9 +33,9 @@ export default function SkillsArsenal() {
           whileInView={{ opacity: 1 }}
           className="text-6xl md:text-8xl font-bold font-outfit reveal-text"
         >
-          THE ARSENAL
+          Skills
         </motion.h2>
-        <p className="text-white/30 tracking-[0.5em] uppercase text-sm mt-4">Technical Stack & Expert Clusters</p>
+        <p className="text-white/30 tracking-[0.2em] uppercase text-sm mt-4">Technical Stack & Expertise</p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-8">

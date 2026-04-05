@@ -37,14 +37,15 @@ export default function Home() {
         <footer className="py-24 border-t border-white/5 text-center bg-black/50 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
-              <div className="text-left">
-                <h2 className="text-2xl font-bold font-outfit mb-2">AKHILESH POTHURI</h2>
-                <p className="text-white/30 text-sm tracking-widest uppercase">The Neural Architect</p>
+              <div className="text-left font-outfit">
+                <h2 className="text-2xl font-bold mb-1">AKHILESH POTHURI</h2>
+                <p className="text-brand-cyan/60 text-xs tracking-[0.2em] uppercase font-bold">ML Engineer | GenAI</p>
               </div>
-              <div className="flex gap-8 text-white/40 text-sm uppercase tracking-widest font-medium">
-                <a href="https://www.linkedin.com/in/akhilesh-pothuri/" className="hover:text-brand-cyan transition-colors text-brand-cyan">LinkedIn</a>
-                <a href="https://github.com/AKhileshPothuri" className="hover:text-brand-cyan transition-colors text-brand-cyan">GitHub</a>
-                <a href={process.env.NODE_ENV === 'production' ? "/Portfolio/resume.pdf" : "/resume.pdf"} target="_blank" className="hover:text-brand-cyan transition-colors text-brand-cyan">Resume</a>
+              <div className="flex flex-wrap justify-center gap-8 text-white/40 text-sm uppercase tracking-widest font-bold">
+                <a href="https://www.linkedin.com/in/akhilesh-pothuri/" className="hover:text-brand-cyan transition-colors">LinkedIn</a>
+                <a href="https://github.com/AKhileshPothuri" className="hover:text-brand-cyan transition-colors">GitHub</a>
+                <a href={process.env.NODE_ENV === 'production' ? "/Portfolio/resume.pdf" : "/resume.pdf"} target="_blank" className="hover:text-brand-cyan transition-colors">Resume</a>
+                <a href="mailto:pothuriakhilesh@yahoo.com" className="hover:text-brand-cyan transition-colors">Email</a>
               </div>
             </div>
 

@@ -49,7 +49,7 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 1.1]);
 
-  const bio = "Machine Learning Engineer at Verizon specializing in the end-to-end lifecycle of Generative AI. From a Master’s in Data Science at UNC Charlotte to architecting autonomous agentic workflows, I bridge the gap between complex neural architectures and enterprise-scale business intelligence.";
+  const bio = "Machine Learning Engineer at Verizon building multi-agent GenAI systems at enterprise scale. Previously at HP R&D. MS in Data Science from UNC Charlotte.";
 
   return (
     <ContentSection id="hero" className="min-h-screen py-0">
@@ -67,8 +67,8 @@ export default function Hero() {
           <h1 className="text-7xl md:text-9xl font-bold font-outfit tracking-tighter mb-4">
             AKHILESH <span className="reveal-text">POTHURI</span>
           </h1>
-          <p className="text-brand-cyan tracking-[0.6em] uppercase text-sm font-bold drop-shadow-md">
-            The Neural Architect
+          <p className="text-brand-cyan tracking-[0.3em] uppercase text-sm font-bold drop-shadow-md">
+            ML Engineer | GenAI | Multi-Agent Systems
           </p>
         </motion.div>
 
@@ -85,8 +85,8 @@ export default function Hero() {
                 initial={{ opacity: 0, filter: "blur(10px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ 
-                  delay: 0.8 + i * 0.05,
-                  duration: 0.8,
+                  delay: 0.2 + i * 0.02,
+                  duration: 0.5,
                   ease: "easeOut"
                 }}
                 className="inline-block"
@@ -108,10 +108,10 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 3.5, duration: 1 }}
+          transition={{ delay: 1, duration: 1 }}
           className="mt-20 flex flex-col items-center gap-4"
         >
-          <span className="text-white/20 text-[10px] uppercase tracking-[0.5em]">Explore the Odyssey</span>
+          <span className="text-white/40 text-[11px] uppercase tracking-[0.3em] font-medium transition-colors hover:text-brand-cyan cursor-default">View My Work</span>
           <ArrowDown className="text-brand-cyan/50 animate-bounce" size={20} />
         </motion.div>
       </motion.div>
