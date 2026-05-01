@@ -19,6 +19,28 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "CostLine",
+    category: "AI FinOps",
+    description: "Infrastructure-level proxy that enforces hard budget limits and tracks per-user/per-feature unit economics for LLM applications with sub-10ms overhead.",
+    tech: ["Kubernetes", "AI FinOps", "Proxies"],
+    accent: "brand-cyan",
+    links: {
+      demo: "https://costline.dev/"
+    }
+  },
+  {
+    title: "Nexus-Graph",
+    category: "Open Source Tooling",
+    description: "An MCP server and CLI tool reducing AI token usage by 95%. Parses ASTs via Tree-sitter to build high-performance SQLite symbol graphs for surgical context retrieval.",
+    tech: ["AST Parsing", "SQLite", "MCP", "AI"],
+    gridSpan: "md:col-span-2",
+    accent: "brand-violet",
+    links: {
+      demo: "https://nexus-graph.dev/",
+      github: "https://github.com/AKhileshPothuri/Nexus-Graph"
+    }
+  },
+  {
     title: "KG Research",
     category: "Publication",
     description: "Published researcher in Knowledge Graphs and distributed systems. Developed semantic schemas for complex relationship mapping in large-scale data environments.",
@@ -46,7 +68,7 @@ const projects: Project[] = [
     description: "Built a personalized recommendation engine for property discovery using Collaborative Filtering and high-dimensional XGBoost models.",
     tech: ["XGBoost", "Recommenders", "Collaborative Filtering"],
     gridSpan: "md:col-span-2",
-    accent: "brand-violet",
+    accent: "brand-cyan",
     links: {
       github: "https://github.com/AKhileshPothuri/Zillow-House-Price-Prediction"
     }
